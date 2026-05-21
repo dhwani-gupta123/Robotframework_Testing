@@ -1,8 +1,7 @@
-name: Robot Framework CI
+name: Robot Framework Manual Run
 
 on:
-  push:
-  pull_request:
+  workflow_dispatch:
 
 jobs:
   test:
@@ -17,10 +16,20 @@ jobs:
         with:
           python-version: "3.10"
 
-      - name: Install Robot Framework
+      - name: Install dependencies
         run: |
           pip install robotframework
 
-      - name: Run Tests
+      - name: Run Robot Framework Tests
         run: |
           robot tests/
+
+      - name: Upload Results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: robot-results
+          path: |
+            output.xml
+            log.html
+            report.html
