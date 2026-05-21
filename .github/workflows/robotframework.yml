@@ -22,7 +22,7 @@ jobs:
 
       - name: Run Robot Framework Tests
         run: |
-          robot tests/
+          robot TestSuite/
 
       - name: Upload Results
         if: always()
