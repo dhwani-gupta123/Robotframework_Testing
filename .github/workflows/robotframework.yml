@@ -3,12 +3,8 @@ name: Robot Framework Manual Run
 on:
   workflow_dispatch:
     inputs:
-      suite:
-        description: "Test suite or folder"
-        required: false
-        default: "TestSuite/"
       tags:
-        description: "Robot Framework tags (optional)"
+        description: "Optional tag to run (e.g. TC, smoke)"
         required: false
         default: ""
 
@@ -34,9 +30,9 @@ jobs:
           echo "Running Robot Framework tests..."
 
           if [ -n "${{ github.event.inputs.tags }}" ]; then
-            robot ${{ github.event.inputs.suite }} --include "${{ github.event.inputs.tags }}"
+            robot TestSuite/ --include "${{ github.event.inputs.tags }}"
           else
-            robot ${{ github.event.inputs.suite }}
+            robot TestSuite/
           fi
 
       - name: Upload Results
