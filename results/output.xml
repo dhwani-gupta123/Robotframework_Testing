@@ -1,183 +1,162 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.2 (Python 3.12.10 on win32)" generated="2026-05-22T04:39:17.719600" rpa="false" schemaversion="5">
+<robot generator="Robot 7.4.2 (Python 3.12.10 on win32)" generated="2026-05-22T05:00:07.315757" rpa="false" schemaversion="5">
 <suite id="s1" name="Robot Testcase" source="C:\Users\dhwani.gupta\Music\Robot_Testcase">
 <suite id="s1-s1" name="TestSuite" source="C:\Users\dhwani.gupta\Music\Robot_Testcase\TestSuite">
-<suite id="s1-s1-s1" name="Validation" source="C:\Users\dhwani.gupta\Music\Robot_Testcase\TestSuite\Validation.robot">
-<test id="s1-s1-s1-t1" name="TC03_Validation_Keywords***" line="9">
+<suite id="s1-s1-s1" name="Login" source="C:\Users\dhwani.gupta\Music\Robot_Testcase\TestSuite\Login.robot">
+<test id="s1-s1-s1-t1" name="Valid Login Test" line="11">
 <kw name="Launch Browser" owner="Demokeywords" type="SETUP">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-05-22T05:00:11.674733" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000002204E77B1D0&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-05-22T05:00:11.631888" elapsed="0.042845"/>
+</kw>
+<if>
+<branch type="IF" condition="${HEADLESS}">
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--headless=new</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="NOT RUN" start="2026-05-22T05:00:11.674733" elapsed="0.000000"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="NOT RUN" start="2026-05-22T05:00:11.674733" elapsed="0.000000"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-dev-shm-usage</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="NOT RUN" start="2026-05-22T05:00:11.674733" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-05-22T05:00:11.674733" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2026-05-22T05:00:11.674733" elapsed="0.000000"/>
+</if>
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2026-05-22T04:39:18.205162" level="INFO">Opening browser 'chrome' to base url 'http://demowebshop.tricentis.com/'.</msg>
+<msg time="2026-05-22T05:00:11.674733" level="INFO">Opening browser 'chrome' to base url 'http://demowebshop.tricentis.com/'.</msg>
 <arg>${URL}</arg>
 <arg>chrome</arg>
+<arg>options=${options}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-05-22T04:39:18.202685" elapsed="9.763054"/>
+<status status="PASS" start="2026-05-22T05:00:11.674733" elapsed="14.808038"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2026-05-22T04:39:27.966252" elapsed="0.041095"/>
+<status status="PASS" start="2026-05-22T05:00:26.482771" elapsed="0.044210"/>
 </kw>
 <kw name="Set Selenium Timeout" owner="SeleniumLibrary">
 <arg>10s</arg>
 <doc>Sets the timeout that is used by various keywords.</doc>
-<status status="PASS" start="2026-05-22T04:39:28.008102" elapsed="0.001533"/>
+<status status="PASS" start="2026-05-22T05:00:26.526981" elapsed="0.006017"/>
 </kw>
-<status status="PASS" start="2026-05-22T04:39:18.202685" elapsed="9.806950"/>
-</kw>
-<kw name="Verify Tilte Of Application is Demo Web Shop" owner="Demokeywords">
-<kw name="Title Should Be" owner="SeleniumLibrary">
-<msg time="2026-05-22T04:39:28.023890" level="INFO">Page title is 'Demo Web Shop'.</msg>
-<arg>Demo Web Shop</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<status status="PASS" start="2026-05-22T04:39:28.011645" elapsed="0.012245"/>
-</kw>
-<status status="PASS" start="2026-05-22T04:39:28.011645" elapsed="0.012245"/>
-</kw>
-<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2026-05-22T04:39:28.199367" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-79.png"&gt;&lt;img src="selenium-screenshot-79.png" width="800px"&gt;&lt;/a&gt;</msg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2026-05-22T04:39:28.027911" elapsed="0.172751"/>
+<status status="PASS" start="2026-05-22T05:00:11.631888" elapsed="14.902120"/>
 </kw>
 <kw name="Click Login Link" owner="Demokeywords">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-05-22T04:39:28.211522" level="INFO">Clicking element '//a[text()='Log in']'.</msg>
+<msg time="2026-05-22T05:00:26.537831" level="INFO">Clicking element '//a[text()='Log in']'.</msg>
 <arg>${LOGIN_LINK}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-05-22T04:39:28.207504" elapsed="0.584185"/>
+<status status="PASS" start="2026-05-22T05:00:26.535824" elapsed="0.568194"/>
 </kw>
-<status status="PASS" start="2026-05-22T04:39:28.205493" elapsed="0.586196"/>
+<status status="PASS" start="2026-05-22T05:00:26.534764" elapsed="0.569254"/>
 </kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2026-05-22T04:39:48.795709" level="INFO">Slept 20 seconds.</msg>
-<arg>20s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-05-22T04:39:28.794167" elapsed="20.002229"/>
-</kw>
+<kw name="Wait Until Login Page Visible" owner="Demokeywords">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>//h1[contains(text(),'Welcome, Please Sign In!')]</arg>
+<arg>//strong[normalize-space()='Returning Customer']</arg>
 <arg>20s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-05-22T04:39:48.797640" elapsed="0.043468"/>
+<status status="PASS" start="2026-05-22T05:00:27.106016" elapsed="0.220317"/>
 </kw>
-<kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2026-05-22T04:39:48.885179" level="INFO">Element '//h1[contains(text(),'Welcome, Please Sign In!')]' is displayed.</msg>
-<arg>//h1[contains(text(),'Welcome, Please Sign In!')]</arg>
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2026-05-22T04:39:48.841108" elapsed="0.044071"/>
+<status status="PASS" start="2026-05-22T05:00:27.105035" elapsed="0.221298"/>
 </kw>
-<kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2026-05-22T04:39:48.929344" level="INFO">${text} = Log in</msg>
-<var>${text}</var>
-<arg>xpath=//a[@class='ico-login']</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-05-22T04:39:48.885179" elapsed="0.044165"/>
+<kw name="Enter Login Credentials" owner="Demokeywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-05-22T05:00:27.330749" level="INFO">Typing text 'robotframeworktestuser@test.com' into text field 'id=Email'.</msg>
+<arg>${EMAIL}</arg>
+<arg>${email_1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-22T05:00:27.329676" elapsed="0.195817"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2026-05-22T05:00:27.527637" level="INFO">Typing password into text field 'id=Password'.</msg>
+<msg time="2026-05-22T05:00:27.582838" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${PASSWORD}</arg>
+<arg>${password_1}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-22T05:00:27.525493" elapsed="0.189940"/>
+</kw>
+<return>
+<value>${email}</value>
+<status status="PASS" start="2026-05-22T05:00:27.715433" elapsed="0.000000"/>
+</return>
+<msg time="2026-05-22T05:00:27.715433" level="INFO">${email} = id=Email</msg>
+<var>${email}</var>
+<arg>${useremail}</arg>
+<arg>${password}</arg>
+<status status="PASS" start="2026-05-22T05:00:27.327325" elapsed="0.389629"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2026-05-22T04:39:48.935588" level="INFO">Log in</msg>
-<arg>${text}</arg>
+<msg time="2026-05-22T05:00:27.718966" level="INFO">id=Email</msg>
+<arg>${email}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2026-05-22T04:39:48.929344" elapsed="0.006968"/>
+<status status="PASS" start="2026-05-22T05:00:27.716954" elapsed="0.002012"/>
 </kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>${text}</arg>
-<arg>Log in</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2026-05-22T04:39:48.936312" elapsed="0.000000"/>
+<kw name="Click Login Button" owner="Demokeywords">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-05-22T05:00:27.727408" level="INFO">Clicking button 'xpath=//input[@value='Log in']'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-22T05:00:27.718966" elapsed="0.750086"/>
 </kw>
-<kw name="Should Contain" owner="BuiltIn">
-<arg>${text}</arg>
-<arg>Log</arg>
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2026-05-22T04:39:48.936312" elapsed="0.000000"/>
+<status status="PASS" start="2026-05-22T05:00:27.718966" elapsed="0.750086"/>
 </kw>
-<kw name="Element Text Should Be" owner="SeleniumLibrary">
-<msg time="2026-05-22T04:39:48.947229" level="INFO">Verifying element 'xpath=//a[@class='ico-login']' contains exact text 'Log in'.</msg>
-<arg>xpath=//a[@class='ico-login']</arg>
-<arg>Log in</arg>
-<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<status status="PASS" start="2026-05-22T04:39:48.936312" elapsed="0.049238"/>
-</kw>
-<kw name="Scroll Element Into View" owner="SeleniumLibrary">
-<arg>//a[contains(text(),'Google+')]</arg>
-<doc>Scrolls the element identified by ``locator`` into view.</doc>
-<status status="PASS" start="2026-05-22T04:39:48.985550" elapsed="0.336522"/>
-</kw>
-<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2026-05-22T04:39:49.451960" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-80.png"&gt;&lt;img src="selenium-screenshot-80.png" width="800px"&gt;&lt;/a&gt;</msg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2026-05-22T04:39:49.323173" elapsed="0.135324"/>
-</kw>
-<kw name="Mouse Over" owner="SeleniumLibrary">
-<msg time="2026-05-22T04:39:49.458497" level="INFO">Simulating Mouse Over on element '//ul[@class='top-menu']//a[contains(text(),'Computers')]'.</msg>
-<arg>//ul[@class='top-menu']//a[contains(text(),'Computers')]</arg>
-<doc>Simulates hovering the mouse over the element ``locator``.</doc>
-<status status="PASS" start="2026-05-22T04:39:49.458497" elapsed="0.325296"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-05-22T04:39:49.783793" level="INFO">Clicking element '//ul[@class='top-menu']//a[contains(text(),'Desktops')]'.</msg>
-<arg>//ul[@class='top-menu']//a[contains(text(),'Desktops')]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-05-22T04:39:49.783793" elapsed="0.865359"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2026-05-22T04:40:00.651555" level="INFO">Slept 10 seconds.</msg>
-<arg>10s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-05-22T04:39:50.650040" elapsed="10.002578"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-05-22T04:40:00.655822" level="INFO">Typing text 'laptop' into text field '//input[contains(@id,'small-searchterms')]'.</msg>
-<arg>//input[contains(@id,'small-searchterms')]</arg>
-<arg>laptop</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-05-22T04:40:00.653628" elapsed="0.258498"/>
-</kw>
-<kw name="Press Keys" owner="SeleniumLibrary">
-<msg time="2026-05-22T04:40:00.919027" level="INFO">Sending key(s) ('ENTER',) to //input[contains(@id,'small-searchterms')] element.</msg>
-<msg time="2026-05-22T04:40:01.243873" level="INFO">Pressing special key ENTER to element.</msg>
-<msg time="2026-05-22T04:40:01.243873" level="INFO">Releasing special key ENTER.</msg>
-<arg>//input[contains(@id,'small-searchterms')]</arg>
-<arg>ENTER</arg>
-<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<status status="PASS" start="2026-05-22T04:40:00.912126" elapsed="1.033974"/>
-</kw>
+<kw name="Verify Login Successful" owner="Demokeywords">
 <kw name="Page Should Contain" owner="SeleniumLibrary">
-<msg time="2026-05-22T04:40:01.992188" level="INFO">Current page contains text 'Search'.</msg>
-<arg>Search</arg>
+<msg time="2026-05-22T05:00:28.640914" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-81.png"&gt;&lt;img src="selenium-screenshot-81.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-05-22T05:00:28.642146" level="FAIL">Page should have contained text 'Log out' but did not.</msg>
+<arg>Log out</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<status status="PASS" start="2026-05-22T04:40:01.946100" elapsed="0.046088"/>
+<status status="FAIL" start="2026-05-22T05:00:28.471070" elapsed="0.314883">Page should have contained text 'Log out' but did not.</status>
 </kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2026-05-22T04:40:32.007590" level="INFO">Slept 30 seconds.</msg>
-<arg>30s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-05-22T04:40:02.005519" elapsed="30.002071"/>
+<status status="FAIL" start="2026-05-22T05:00:28.470156" elapsed="0.315797">Page should have contained text 'Log out' but did not.</status>
 </kw>
 <kw name="Close Browser Session" owner="Demokeywords" type="TEARDOWN">
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2026-05-22T04:40:32.007590" elapsed="2.683460"/>
+<status status="PASS" start="2026-05-22T05:00:28.788956" elapsed="2.419006"/>
 </kw>
-<status status="PASS" start="2026-05-22T04:40:32.007590" elapsed="2.683460"/>
+<status status="PASS" start="2026-05-22T05:00:28.786962" elapsed="2.421000"/>
 </kw>
-<doc>Validation Keywords in RF</doc>
-<status status="PASS" start="2026-05-22T04:39:18.183275" elapsed="76.507775"/>
+<tag>TC</tag>
+<tag>TC_001</tag>
+<status status="FAIL" start="2026-05-22T05:00:11.608343" elapsed="19.599619">Page should have contained text 'Log out' but did not.</status>
 </test>
-<status status="PASS" start="2026-05-22T04:39:17.778274" elapsed="76.924610"/>
+<status status="FAIL" start="2026-05-22T05:00:07.589224" elapsed="23.708561"/>
 </suite>
-<status status="PASS" start="2026-05-22T04:39:17.769562" elapsed="76.936741"/>
+<status status="FAIL" start="2026-05-22T05:00:07.576789" elapsed="23.726997"/>
 </suite>
-<status status="PASS" start="2026-05-22T04:39:17.727652" elapsed="76.992184"/>
+<status status="FAIL" start="2026-05-22T05:00:07.344532" elapsed="23.965728"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
+<stat pass="0" fail="1" skip="0">TC</stat>
+<stat pass="0" fail="1" skip="0">TC_001</stat>
 </tag>
 <suite>
-<stat name="Robot Testcase" id="s1" pass="1" fail="0" skip="0">Robot Testcase</stat>
-<stat name="TestSuite" id="s1-s1" pass="1" fail="0" skip="0">Robot Testcase.TestSuite</stat>
-<stat name="Validation" id="s1-s1-s1" pass="1" fail="0" skip="0">Robot Testcase.TestSuite.Validation</stat>
+<stat name="Robot Testcase" id="s1" pass="0" fail="1" skip="0">Robot Testcase</stat>
+<stat name="TestSuite" id="s1-s1" pass="0" fail="1" skip="0">Robot Testcase.TestSuite</stat>
+<stat name="Login" id="s1-s1-s1" pass="0" fail="1" skip="0">Robot Testcase.TestSuite.Login</stat>
 </suite>
 </statistics>
 <errors>

@@ -1,6 +1,7 @@
 *** Variables ***
 
 ${URL}     http://demowebshop.tricentis.com/
+${HEADLESS}    False
 
 # Login
 ${LOGIN_LINK}          //a[text()='Log in']

@@ -6,7 +6,16 @@ Resource   ../ObjectRepository/DemoObjects.robot
 *** Keywords ***
 
 Launch Browser
-    Open Browser    ${URL}    chrome
+    ${options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
+
+    IF    ${HEADLESS}
+        Call Method    ${options}    add_argument    --headless=new
+        Call Method    ${options}    add_argument    --no-sandbox
+        Call Method    ${options}    add_argument    --disable-dev-shm-usage
+    END
+
+    Open Browser    ${URL}    chrome    options=${options}
+
     Maximize Browser Window
     Set Selenium Timeout    10s
 

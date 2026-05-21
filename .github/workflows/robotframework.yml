@@ -10,7 +10,7 @@ on:
       environment:
         description: "Environment name"
         required: false
-        default: "qa"
+        default: ""
 
 jobs:
   robot-tests:
