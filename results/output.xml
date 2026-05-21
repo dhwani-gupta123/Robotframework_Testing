@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.12.10 on win32)" generated="2026-05-21T14:44:12.293268" rpa="false" schemaversion="5">
+<suite id="s1" name="Robot Testcase" source="C:\Users\dhwani.gupta\Music\Robot_Testcase">
+<suite id="s1-s1" name="TestSuite" source="C:\Users\dhwani.gupta\Music\Robot_Testcase\TestSuite">
+<suite id="s1-s1-s1" name="Login" source="C:\Users\dhwani.gupta\Music\Robot_Testcase\TestSuite\Login.robot">
+<test id="s1-s1-s1-t1" name="Valid Login Test" line="11">
+<kw name="Launch Browser" owner="Demokeywords" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-05-21T14:44:13.536688" level="INFO">Opening browser 'chrome' to base url 'http://demowebshop.tricentis.com/'.</msg>
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-05-21T14:44:13.534697" elapsed="17.371224"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-05-21T14:44:30.907943" elapsed="0.088214"/>
+</kw>
+<kw name="Set Selenium Timeout" owner="SeleniumLibrary">
+<arg>10s</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" start="2026-05-21T14:44:30.996714" elapsed="0.005721"/>
+</kw>
+<status status="PASS" start="2026-05-21T14:44:13.530688" elapsed="17.472129"/>
+</kw>
+<kw name="Click Login Link" owner="Demokeywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-05-21T14:44:31.014527" level="INFO">Clicking element '//a[text()='Log in']'.</msg>
+<arg>${LOGIN_LINK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-21T14:44:31.008892" elapsed="1.134566"/>
+</kw>
+<status status="PASS" start="2026-05-21T14:44:31.004844" elapsed="1.138614"/>
+</kw>
+<kw name="Wait Until Login Page Visible" owner="Demokeywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//strong[normalize-space()='Returning Customer']</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-05-21T14:44:32.146970" elapsed="0.117238"/>
+</kw>
+<status status="PASS" start="2026-05-21T14:44:32.145472" elapsed="0.119786"/>
+</kw>
+<kw name="Enter Login Credentials" owner="Demokeywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-05-21T14:44:32.274400" level="INFO">Typing text 'robotframeworktestuser@test.com' into text field 'id=Email'.</msg>
+<arg>${EMAIL}</arg>
+<arg>${email_1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-21T14:44:32.270824" elapsed="0.348109"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2026-05-21T14:44:32.622602" level="INFO">Typing password into text field 'id=Password'.</msg>
+<msg time="2026-05-21T14:44:32.699268" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${PASSWORD}</arg>
+<arg>${password_1}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-21T14:44:32.618933" elapsed="0.256409"/>
+</kw>
+<return>
+<value>${email}</value>
+<status status="PASS" start="2026-05-21T14:44:32.875342" elapsed="0.002050"/>
+</return>
+<msg time="2026-05-21T14:44:32.877392" level="INFO">${email} = id=Email</msg>
+<var>${email}</var>
+<arg>${useremail}</arg>
+<arg>${password}</arg>
+<status status="PASS" start="2026-05-21T14:44:32.265258" elapsed="0.614153"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-05-21T14:44:32.884710" level="INFO">id=Email</msg>
+<arg>${email}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-05-21T14:44:32.881431" elapsed="0.003279"/>
+</kw>
+<kw name="Click Login Button" owner="Demokeywords">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-05-21T14:44:32.891736" level="INFO">Clicking button 'xpath=//input[@value='Log in']'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-21T14:44:32.888120" elapsed="0.987276"/>
+</kw>
+<status status="PASS" start="2026-05-21T14:44:32.884710" elapsed="0.990686"/>
+</kw>
+<kw name="Verify Login Successful" owner="Demokeywords">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-05-21T14:44:34.177590" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-73.png"&gt;&lt;img src="selenium-screenshot-73.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-05-21T14:44:34.177590" level="FAIL">Page should have contained text 'Log out' but did not.</msg>
+<arg>Log out</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="FAIL" start="2026-05-21T14:44:33.875396" elapsed="0.327948">Page should have contained text 'Log out' but did not.</status>
+</kw>
+<status status="FAIL" start="2026-05-21T14:44:33.875396" elapsed="0.332317">Page should have contained text 'Log out' but did not.</status>
+</kw>
+<kw name="Close Browser Session" owner="Demokeywords" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-05-21T14:44:34.210952" elapsed="3.162028"/>
+</kw>
+<status status="PASS" start="2026-05-21T14:44:34.208407" elapsed="3.164573"/>
+</kw>
+<status status="FAIL" start="2026-05-21T14:44:13.497037" elapsed="23.875943">Page should have contained text 'Log out' but did not.</status>
+</test>
+<status status="FAIL" start="2026-05-21T14:44:12.445650" elapsed="24.944100"/>
+</suite>
+<status status="FAIL" start="2026-05-21T14:44:12.428737" elapsed="25.008018"/>
+</suite>
+<status status="FAIL" start="2026-05-21T14:44:12.313536" elapsed="25.133487"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Robot Testcase" id="s1" pass="0" fail="1" skip="0">Robot Testcase</stat>
+<stat name="TestSuite" id="s1-s1" pass="0" fail="1" skip="0">Robot Testcase.TestSuite</stat>
+<stat name="Login" id="s1-s1-s1" pass="0" fail="1" skip="0">Robot Testcase.TestSuite.Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
