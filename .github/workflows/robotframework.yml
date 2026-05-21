@@ -2,6 +2,19 @@ name: Robot Framework Manual Run
 
 on:
   workflow_dispatch:
+    inputs:
+      tags:
+        description: "Robot tags to include (e.g. smoke OR regression)"
+        required: false
+        default: ""
+      exclude_tags:
+        description: "Tags to exclude"
+        required: false
+        default: ""
+      suite:
+        description: "Test suite or folder to run"
+        required: false
+        default: "TestSuite/"
 
 jobs:
   test:
@@ -22,7 +35,23 @@ jobs:
 
       - name: Run Robot Framework Tests
         run: |
-          robot TestSuite/
+          CMD="robot"
+
+          # Add suite/folder
+          CMD="$CMD ${{ github.event.inputs.suite }}"
+
+          # Include tags
+          if [ -n "${{ github.event.inputs.tags }}" ]; then
+            CMD="$CMD --include ${{ github.event.inputs.tags }}"
+          fi
+
+          # Exclude tags
+          if [ -n "${{ github.event.inputs.exclude_tags }}" ]; then
+            CMD="$CMD --exclude ${{ github.event.inputs.exclude_tags }}"
+          fi
+
+          echo "Running: $CMD"
+          eval $CMD
 
       - name: Upload Results
         if: always()

@@ -9,6 +9,7 @@ Test Teardown   Close Browser Session
 *** Test Cases ***
 
 Valid Login Test
+    [Tags]    TC_001    TC
     Click Login Link
     Wait Until Login Page Visible
     ${email}    Enter Login Credentials    ${useremail}    ${password}
@@ -18,6 +19,7 @@ Valid Login Test
 
 
 Invalid Login Test - Wrong Password
+    [Tags]    TC_002    TC
     Click Login Link
     Wait Until Login Page Visible
     Enter Login Credentials    testuser@test.com    wrongpass
@@ -26,6 +28,7 @@ Invalid Login Test - Wrong Password
 
 
 Invalid Login Test - Invalid Email
+    [Tags]    TC_003    TC
     Click Login Link
     Wait Until Login Page Visible
     Enter Login Credentials    invalid@test.com    Password123
