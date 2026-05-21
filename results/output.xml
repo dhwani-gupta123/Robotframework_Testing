@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.2 (Python 3.12.10 on win32)" generated="2026-05-22T05:00:07.315757" rpa="false" schemaversion="5">
+<robot generator="Robot 7.4.2 (Python 3.12.10 on win32)" generated="2026-05-22T05:05:46.805944" rpa="false" schemaversion="5">
 <suite id="s1" name="Robot Testcase" source="C:\Users\dhwani.gupta\Music\Robot_Testcase">
 <suite id="s1-s1" name="TestSuite" source="C:\Users\dhwani.gupta\Music\Robot_Testcase\TestSuite">
 <suite id="s1-s1-s1" name="Login" source="C:\Users\dhwani.gupta\Music\Robot_Testcase\TestSuite\Login.robot">
 <test id="s1-s1-s1-t1" name="Valid Login Test" line="11">
 <kw name="Launch Browser" owner="Demokeywords" type="SETUP">
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2026-05-22T05:00:11.674733" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000002204E77B1D0&gt;</msg>
+<msg time="2026-05-22T05:05:47.211752" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000002B93C97B650&gt;</msg>
 <var>${options}</var>
 <arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
 <arg>sys, selenium.webdriver</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2026-05-22T05:00:11.631888" elapsed="0.042845"/>
+<status status="PASS" start="2026-05-22T05:05:47.206487" elapsed="0.007607"/>
 </kw>
 <if>
 <branch type="IF" condition="${HEADLESS}">
@@ -20,130 +20,133 @@
 <arg>add_argument</arg>
 <arg>--headless=new</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="NOT RUN" start="2026-05-22T05:00:11.674733" elapsed="0.000000"/>
+<status status="NOT RUN" start="2026-05-22T05:05:47.214094" elapsed="0.002307"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${options}</arg>
 <arg>add_argument</arg>
 <arg>--no-sandbox</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="NOT RUN" start="2026-05-22T05:00:11.674733" elapsed="0.000000"/>
+<status status="NOT RUN" start="2026-05-22T05:05:47.216401" elapsed="0.000000"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${options}</arg>
 <arg>add_argument</arg>
 <arg>--disable-dev-shm-usage</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="NOT RUN" start="2026-05-22T05:00:11.674733" elapsed="0.000000"/>
+<status status="NOT RUN" start="2026-05-22T05:05:47.217411" elapsed="0.000000"/>
 </kw>
-<status status="NOT RUN" start="2026-05-22T05:00:11.674733" elapsed="0.000000"/>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--window-size=1920,1080</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="NOT RUN" start="2026-05-22T05:05:47.217411" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-05-22T05:05:47.214094" elapsed="0.003317"/>
 </branch>
-<status status="PASS" start="2026-05-22T05:00:11.674733" elapsed="0.000000"/>
+<status status="PASS" start="2026-05-22T05:05:47.214094" elapsed="0.004315"/>
 </if>
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2026-05-22T05:00:11.674733" level="INFO">Opening browser 'chrome' to base url 'http://demowebshop.tricentis.com/'.</msg>
+<msg time="2026-05-22T05:05:47.218813" level="INFO">Opening browser 'chrome' to base url 'http://demowebshop.tricentis.com/'.</msg>
 <arg>${URL}</arg>
 <arg>chrome</arg>
 <arg>options=${options}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-05-22T05:00:11.674733" elapsed="14.808038"/>
-</kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2026-05-22T05:00:26.482771" elapsed="0.044210"/>
+<status status="PASS" start="2026-05-22T05:05:47.218813" elapsed="11.815872"/>
 </kw>
 <kw name="Set Selenium Timeout" owner="SeleniumLibrary">
 <arg>10s</arg>
 <doc>Sets the timeout that is used by various keywords.</doc>
-<status status="PASS" start="2026-05-22T05:00:26.526981" elapsed="0.006017"/>
+<status status="PASS" start="2026-05-22T05:05:59.034685" elapsed="0.004975"/>
 </kw>
-<status status="PASS" start="2026-05-22T05:00:11.631888" elapsed="14.902120"/>
+<status status="PASS" start="2026-05-22T05:05:47.191309" elapsed="11.848893"/>
 </kw>
 <kw name="Click Login Link" owner="Demokeywords">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-05-22T05:00:26.537831" level="INFO">Clicking element '//a[text()='Log in']'.</msg>
+<msg time="2026-05-22T05:05:59.044199" level="INFO">Clicking element '//a[text()='Log in']'.</msg>
 <arg>${LOGIN_LINK}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-05-22T05:00:26.535824" elapsed="0.568194"/>
+<status status="PASS" start="2026-05-22T05:05:59.043192" elapsed="0.518666"/>
 </kw>
-<status status="PASS" start="2026-05-22T05:00:26.534764" elapsed="0.569254"/>
+<status status="PASS" start="2026-05-22T05:05:59.041782" elapsed="0.520076"/>
 </kw>
 <kw name="Wait Until Login Page Visible" owner="Demokeywords">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>//strong[normalize-space()='Returning Customer']</arg>
 <arg>20s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-05-22T05:00:27.106016" elapsed="0.220317"/>
+<status status="PASS" start="2026-05-22T05:05:59.563865" elapsed="0.025250"/>
 </kw>
-<status status="PASS" start="2026-05-22T05:00:27.105035" elapsed="0.221298"/>
+<status status="PASS" start="2026-05-22T05:05:59.562947" elapsed="0.027137"/>
 </kw>
 <kw name="Enter Login Credentials" owner="Demokeywords">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-05-22T05:00:27.330749" level="INFO">Typing text 'robotframeworktestuser@test.com' into text field 'id=Email'.</msg>
+<msg time="2026-05-22T05:05:59.593324" level="INFO">Typing text 'robotframeworktestuser@test.com' into text field 'id=Email'.</msg>
 <arg>${EMAIL}</arg>
 <arg>${email_1}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-05-22T05:00:27.329676" elapsed="0.195817"/>
+<status status="PASS" start="2026-05-22T05:05:59.592247" elapsed="0.176495"/>
 </kw>
 <kw name="Input Password" owner="SeleniumLibrary">
-<msg time="2026-05-22T05:00:27.527637" level="INFO">Typing password into text field 'id=Password'.</msg>
-<msg time="2026-05-22T05:00:27.582838" level="INFO">Temporally setting log level to: NONE</msg>
+<msg time="2026-05-22T05:05:59.770718" level="INFO">Typing password into text field 'id=Password'.</msg>
+<msg time="2026-05-22T05:05:59.827640" level="INFO">Temporally setting log level to: NONE</msg>
 <arg>${PASSWORD}</arg>
 <arg>${password_1}</arg>
 <doc>Types the given password into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-05-22T05:00:27.525493" elapsed="0.189940"/>
+<status status="PASS" start="2026-05-22T05:05:59.769718" elapsed="0.147055"/>
 </kw>
 <return>
 <value>${email}</value>
-<status status="PASS" start="2026-05-22T05:00:27.715433" elapsed="0.000000"/>
+<status status="PASS" start="2026-05-22T05:05:59.916773" elapsed="0.000000"/>
 </return>
-<msg time="2026-05-22T05:00:27.715433" level="INFO">${email} = id=Email</msg>
+<msg time="2026-05-22T05:05:59.917916" level="INFO">${email} = id=Email</msg>
 <var>${email}</var>
 <arg>${useremail}</arg>
 <arg>${password}</arg>
-<status status="PASS" start="2026-05-22T05:00:27.327325" elapsed="0.389629"/>
+<status status="PASS" start="2026-05-22T05:05:59.590859" elapsed="0.328066"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2026-05-22T05:00:27.718966" level="INFO">id=Email</msg>
+<msg time="2026-05-22T05:05:59.920929" level="INFO">id=Email</msg>
 <arg>${email}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2026-05-22T05:00:27.716954" elapsed="0.002012"/>
+<status status="PASS" start="2026-05-22T05:05:59.918925" elapsed="0.002004"/>
 </kw>
 <kw name="Click Login Button" owner="Demokeywords">
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2026-05-22T05:00:27.727408" level="INFO">Clicking button 'xpath=//input[@value='Log in']'.</msg>
+<msg time="2026-05-22T05:05:59.926261" level="INFO">Clicking button 'xpath=//input[@value='Log in']'.</msg>
 <arg>${LOGIN_BUTTON}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2026-05-22T05:00:27.718966" elapsed="0.750086"/>
+<status status="PASS" start="2026-05-22T05:05:59.925260" elapsed="0.621020"/>
 </kw>
-<status status="PASS" start="2026-05-22T05:00:27.718966" elapsed="0.750086"/>
+<status status="PASS" start="2026-05-22T05:05:59.922292" elapsed="0.624835"/>
 </kw>
 <kw name="Verify Login Successful" owner="Demokeywords">
 <kw name="Page Should Contain" owner="SeleniumLibrary">
-<msg time="2026-05-22T05:00:28.640914" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-81.png"&gt;&lt;img src="selenium-screenshot-81.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2026-05-22T05:00:28.642146" level="FAIL">Page should have contained text 'Log out' but did not.</msg>
+<msg time="2026-05-22T05:06:00.743881" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-82.png"&gt;&lt;img src="selenium-screenshot-82.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-05-22T05:06:00.743881" level="FAIL">Page should have contained text 'Log out' but did not.</msg>
 <arg>Log out</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<status status="FAIL" start="2026-05-22T05:00:28.471070" elapsed="0.314883">Page should have contained text 'Log out' but did not.</status>
+<status status="FAIL" start="2026-05-22T05:06:00.547633" elapsed="0.213038">Page should have contained text 'Log out' but did not.</status>
 </kw>
-<status status="FAIL" start="2026-05-22T05:00:28.470156" elapsed="0.315797">Page should have contained text 'Log out' but did not.</status>
+<status status="FAIL" start="2026-05-22T05:06:00.547633" elapsed="0.214045">Page should have contained text 'Log out' but did not.</status>
 </kw>
 <kw name="Close Browser Session" owner="Demokeywords" type="TEARDOWN">
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2026-05-22T05:00:28.788956" elapsed="2.419006"/>
+<status status="PASS" start="2026-05-22T05:06:00.763685" elapsed="2.425671"/>
 </kw>
-<status status="PASS" start="2026-05-22T05:00:28.786962" elapsed="2.421000"/>
+<status status="PASS" start="2026-05-22T05:06:00.762688" elapsed="2.427851"/>
 </kw>
 <tag>TC</tag>
 <tag>TC_001</tag>
-<status status="FAIL" start="2026-05-22T05:00:11.608343" elapsed="19.599619">Page should have contained text 'Log out' but did not.</status>
+<status status="FAIL" start="2026-05-22T05:05:47.191309" elapsed="15.999230">Page should have contained text 'Log out' but did not.</status>
 </test>
-<status status="FAIL" start="2026-05-22T05:00:07.589224" elapsed="23.708561"/>
+<status status="FAIL" start="2026-05-22T05:05:46.862611" elapsed="16.337831"/>
 </suite>
-<status status="FAIL" start="2026-05-22T05:00:07.576789" elapsed="23.726997"/>
+<status status="FAIL" start="2026-05-22T05:05:46.856623" elapsed="16.347822"/>
 </suite>
-<status status="FAIL" start="2026-05-22T05:00:07.344532" elapsed="23.965728"/>
+<status status="FAIL" start="2026-05-22T05:05:46.815511" elapsed="16.399347"/>
 </suite>
 <statistics>
 <total>

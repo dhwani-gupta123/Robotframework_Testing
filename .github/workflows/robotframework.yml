@@ -7,10 +7,6 @@ on:
         description: "Robot Framework tags to run"
         required: false
         default: ""
-      environment:
-        description: "Environment name"
-        required: false
-        default: ""
 
 jobs:
   robot-tests:
@@ -25,11 +21,14 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Install Google Chrome
+        uses: browser-actions/setup-chrome@v1
+
       - name: Install dependencies
         run: |
           pip install robotframework
-          # Install additional libraries if needed
           pip install robotframework-seleniumlibrary
+          pip install selenium
 
       - name: Run Robot Framework tests
         run: |
@@ -37,13 +36,15 @@ jobs:
 
           if [ -z "${{ github.event.inputs.tags }}" ]; then
             robot \
+              --variable HEADLESS:True \
               --outputdir reports \
               TestSuite/
           else
             robot \
+              --variable HEADLESS:True \
               --include "${{ github.event.inputs.tags }}" \
               --outputdir reports \
-              TestSuite
+              TestSuite/
           fi
 
       - name: Upload Robot Framework reports
