@@ -1,64 +1,19 @@
-name: Robot Framework Manual Run
+- name: Run Robot Framework Tests
+  run: |
+    CMD=(robot)
 
-on:
-  workflow_dispatch:
-    inputs:
-      tags:
-        description: "Robot tags to include (e.g. smoke OR regression)"
-        required: false
-        default: ""
-      exclude_tags:
-        description: "Tags to exclude"
-        required: false
-        default: ""
-      suite:
-        description: "Test suite or folder to run"
-        required: false
-        default: "TestSuite/"
+    # suite/folder (must be before or after, both work, but keep consistent)
+    CMD+=("TestSuite/")
 
-jobs:
-  test:
-    runs-on: ubuntu-latest
+    # include tags
+    if [ -n "TC" ]; then
+      CMD+=("--include" "TC")
+    fi
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+    # exclude tags
+    if [ -n "" ]; then
+      CMD+=("--exclude" "")
+    fi
 
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.10"
-
-      - name: Install dependencies
-        run: |
-          pip install robotframework
-
-      - name: Run Robot Framework Tests
-        run: |
-          CMD="robot"
-
-          # Add suite/folder
-          CMD="$CMD ${{ github.event.inputs.suite }}"
-
-          # Include tags
-          if [ -n "${{ github.event.inputs.tags }}" ]; then
-            CMD="$CMD --include ${{ github.event.inputs.tags }}"
-          fi
-
-          # Exclude tags
-          if [ -n "${{ github.event.inputs.exclude_tags }}" ]; then
-            CMD="$CMD --exclude ${{ github.event.inputs.exclude_tags }}"
-          fi
-
-          echo "Running: $CMD"
-          eval $CMD
-
-      - name: Upload Results
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: robot-results
-          path: |
-            output.xml
-            log.html
-            report.html
+    echo "Running: ${CMD[*]}"
+    "${CMD[@]}"
