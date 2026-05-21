@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       tags:
-        description: "Optional tag to run (e.g. TC, smoke)"
+        description: "Tag to run (e.g. TC, smoke). Leave empty for all tests"
         required: false
         default: ""
 
@@ -29,10 +29,12 @@ jobs:
         run: |
           echo "Running Robot Framework tests..."
 
-          if [ -n "${{ github.event.inputs.tags }}" ]; then
-            robot TestSuite/ --include "${{ github.event.inputs.tags }}"
-          else
+          TAGS="${{ github.event.inputs.tags }}"
+
+          if [ -z "$TAGS" ]; then
             robot TestSuite/
+          else
+            robot TestSuite/ --include "$TAGS"
           fi
 
       - name: Upload Results
