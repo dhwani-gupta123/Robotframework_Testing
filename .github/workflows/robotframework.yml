@@ -1,48 +1,53 @@
-name: Robot Framework Manual Run
+name: Run Robot Framework Tests
 
 on:
   workflow_dispatch:
     inputs:
       tags:
-        description: "Tag to run (e.g. TC, smoke). Leave empty for all tests"
+        description: "Robot Framework tags to run"
         required: false
         default: ""
+      environment:
+        description: "Environment name"
+        required: false
+        default: "qa"
 
 jobs:
-  test:
+  robot-tests:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Python
+      - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.10"
+          python-version: "3.11"
 
       - name: Install dependencies
         run: |
           pip install robotframework
+          # Install additional libraries if needed
+          # pip install robotframework-seleniumlibrary
 
-      - name: Run Robot Framework Tests
+      - name: Run Robot Framework tests
         run: |
-          echo "Running Robot Framework tests..."
+          mkdir -p reports
 
-          TAGS="${{ github.event.inputs.tags }}"
-
-          if [ -z "$TAGS" ]; then
-            robot TestSuite/
+          if [ -z "${{ github.event.inputs.tags }}" ]; then
+            robot \
+              --outputdir reports \
+              TestSuite/
           else
-            robot TestSuite/ --include "$TAGS"
+            robot \
+              --include "${{ github.event.inputs.tags }}" \
+              --outputdir reports \
+              TestSuite
           fi
 
-      - name: Upload Results
-        if: always()
+      - name: Upload Robot Framework reports
         uses: actions/upload-artifact@v4
         with:
-          name: robot-results
-          path: |
-            output.xml
-            log.html
-            report.html
+          name: robot-reports
+          path: reports/
