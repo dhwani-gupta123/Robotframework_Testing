@@ -5,19 +5,20 @@ Resource   ../ObjectRepository/DemoObjects.robot
 
 *** Keywords ***
 
+*** Keywords ***
 Launch Browser
-    ${options}=    Evaluate    webdriver.ChromeOptions()    webdriver
+    ${options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys
 
     IF    ${HEADLESS}
-        Call Method    ${options}    add_argument    "--headless=new"
-        Call Method    ${options}    add_argument    "--no-sandbox"
-        Call Method    ${options}    add_argument    "--disable-dev-shm-usage"
-        Call Method    ${options}    add_argument    "--window-size=1920,1080"
+        Call Method    ${options}    add_argument    --headless=new
+        Call Method    ${options}    add_argument    --no-sandbox
+        Call Method    ${options}    add_argument    --disable-dev-shm-usage
+        Call Method    ${options}    add_argument    --window-size=1920,1080
     END
 
     Open Browser    ${URL}    chrome    options=${options}
     Set Selenium Timeout    10s
-
+    
 Close Browser Session
     Close Browser
 
