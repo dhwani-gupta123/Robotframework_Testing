@@ -8,11 +8,7 @@ on:
         required: false
         default: "TestSuite/"
       tags:
-        description: "Include tags (e.g. smoke, TC)"
-        required: false
-        default: ""
-      exclude_tags:
-        description: "Exclude tags"
+        description: "Robot Framework tags (optional)"
         required: false
         default: ""
 
@@ -35,23 +31,13 @@ jobs:
 
       - name: Run Robot Framework Tests
         run: |
-          CMD=(robot)
+          echo "Running Robot Framework tests..."
 
-          # Suite/folder
-          CMD+=("${{ github.event.inputs.suite }}")
-
-          # Include tags (if provided)
           if [ -n "${{ github.event.inputs.tags }}" ]; then
-            CMD+=("--include" "${{ github.event.inputs.tags }}")
+            robot ${{ github.event.inputs.suite }} --include "${{ github.event.inputs.tags }}"
+          else
+            robot ${{ github.event.inputs.suite }}
           fi
-
-          # Exclude tags (if provided)
-          if [ -n "${{ github.event.inputs.exclude_tags }}" ]; then
-            CMD+=("--exclude" "${{ github.event.inputs.exclude_tags }}")
-          fi
-
-          echo "Running: ${CMD[*]}"
-          "${CMD[@]}"
 
       - name: Upload Results
         if: always()
