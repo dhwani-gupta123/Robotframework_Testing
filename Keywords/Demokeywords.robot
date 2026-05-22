@@ -5,20 +5,20 @@ Resource   ../ObjectRepository/DemoObjects.robot
 
 
 *** Keywords ***
-# Launch Browser
-#     ${options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys
-#     IF    ${HEADLESS}
-#     Evaluate    $options.add_argument("--headless=new")
-#     Evaluate    $options.add_argument("--no-sandbox")
-#     Evaluate    $options.add_argument("--disable-dev-shm-usage")
-#     Evaluate    $options.add_argument("--window-size=1920,1080")
-#     END
-#     Open Browser    ${URL}    chrome    options=${options}
-#     Set Selenium Timeout    10s
-
 Launch Browser
-    Open Browser    ${URL}    chrome    
+    ${options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys
+    IF    ${HEADLESS}
+    Evaluate    $options.add_argument("--headless=new")
+    Evaluate    $options.add_argument("--no-sandbox")
+    Evaluate    $options.add_argument("--disable-dev-shm-usage")
+    Evaluate    $options.add_argument("--window-size=1920,1080")
+    END
+    Open Browser    ${URL}    chrome    options=${options}
     Set Selenium Timeout    10s
+
+# Launch Browser
+#     Open Browser    ${URL}    chrome    
+#     Set Selenium Timeout    10s
 
 
 Close Browser Session
