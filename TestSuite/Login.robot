@@ -12,8 +12,8 @@ Valid Login Test
     [Tags]    TC_001    TC
     Click Login Link
     Wait Until Login Page Visible
-    ${email}    Enter Login Credentials    ${useremail}    ${password}
-    Log    ${email}
+    Capture Page Screenshot
+    Enter Login Credentials    ${useremail}    ${PASSWORD}
     Click Login Button
     Verify Login Successful
 
@@ -25,6 +25,7 @@ Invalid Login Test - Wrong Password
     Enter Login Credentials    testuser@test.com    wrongpass
     Click Login Button
     Page Should Contain    Login was unsuccessful    10s
+    Capture Page Screenshot
 
 
 Invalid Login Test - Invalid Email

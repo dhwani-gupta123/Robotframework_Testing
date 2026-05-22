@@ -3,26 +3,23 @@ Library    SeleniumLibrary
 
 Resource   ../ObjectRepository/DemoObjects.robot
 
-*** Keywords ***
 
 *** Keywords ***
+# Launch Browser
+#     ${options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys
+#     IF    ${HEADLESS}
+#     Evaluate    $options.add_argument("--headless=new")
+#     Evaluate    $options.add_argument("--no-sandbox")
+#     Evaluate    $options.add_argument("--disable-dev-shm-usage")
+#     Evaluate    $options.add_argument("--window-size=1920,1080")
+#     END
+#     Open Browser    ${URL}    chrome    options=${options}
+#     Set Selenium Timeout    10s
+
 Launch Browser
-    ${options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys
-
-    IF    ${HEADLESS}
-
-    Evaluate    $options.add_argument("--headless=new")
-
-    Evaluate    $options.add_argument("--no-sandbox")
-
-    Evaluate    $options.add_argument("--disable-dev-shm-usage")
-
-    Evaluate    $options.add_argument("--window-size=1920,1080")
-
-   END
- 
-    Open Browser    ${URL}    chrome    options=${options}
+    Open Browser    ${URL}    chrome    
     Set Selenium Timeout    10s
+
 
 Close Browser Session
     Close Browser
@@ -34,8 +31,7 @@ Enter Login Credentials
     [Arguments]    ${email_1}    ${password_1}
     Input Text     ${EMAIL}      ${email_1}
     Input Password    ${PASSWORD}   ${password_1}
-    RETURN    ${email}
-
+    
 Click Login Button
     Click Button    ${LOGIN_BUTTON}
 

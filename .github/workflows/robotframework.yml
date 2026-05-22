@@ -37,6 +37,8 @@ jobs:
           if [ -z "${{ github.event.inputs.tags }}" ]; then
             robot \
               --variable HEADLESS:True \
+              --variable URL:${{ vars.APP_URL }} \
+              --variable PASSWORD:${{ secrets.APPLICATION_PASSWORD }} \
               --outputdir reports \
               TestSuite/
           else

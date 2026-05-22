@@ -1,145 +1,115 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.2 (Python 3.12.10 on win32)" generated="2026-05-22T05:34:52.345575" rpa="false" schemaversion="5">
+<robot generator="Robot 7.4.2 (Python 3.12.10 on win32)" generated="2026-05-22T10:33:46.564487" rpa="false" schemaversion="5">
 <suite id="s1" name="Robot Testcase" source="C:\Users\dhwani.gupta\Music\Robot_Testcase">
 <suite id="s1-s1" name="TestSuite" source="C:\Users\dhwani.gupta\Music\Robot_Testcase\TestSuite">
 <suite id="s1-s1-s1" name="Login" source="C:\Users\dhwani.gupta\Music\Robot_Testcase\TestSuite\Login.robot">
-<test id="s1-s1-s1-t1" name="Invalid Login Test - Wrong Password" line="21">
+<test id="s1-s1-s1-t1" name="Valid Login Test" line="11">
 <kw name="Launch Browser" owner="Demokeywords" type="SETUP">
-<kw name="Evaluate" owner="BuiltIn">
-<msg time="2026-05-22T05:34:53.367366" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000002AFE5ACA3F0&gt;</msg>
-<var>${options}</var>
-<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
-<arg>sys</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2026-05-22T05:34:53.351372" elapsed="0.015994"/>
-</kw>
-<if>
-<branch type="IF" condition="${HEADLESS}">
-<kw name="Evaluate" owner="BuiltIn">
-<arg>$options.add_argument("--headless=new")</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="NOT RUN" start="2026-05-22T05:34:53.367366" elapsed="0.000000"/>
-</kw>
-<kw name="Evaluate" owner="BuiltIn">
-<arg>$options.add_argument("--no-sandbox")</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="NOT RUN" start="2026-05-22T05:34:53.367366" elapsed="0.000000"/>
-</kw>
-<kw name="Evaluate" owner="BuiltIn">
-<arg>$options.add_argument("--disable-dev-shm-usage")</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="NOT RUN" start="2026-05-22T05:34:53.367366" elapsed="0.000000"/>
-</kw>
-<kw name="Evaluate" owner="BuiltIn">
-<arg>$options.add_argument("--window-size=1920,1080")</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="NOT RUN" start="2026-05-22T05:34:53.367366" elapsed="0.004015"/>
-</kw>
-<status status="NOT RUN" start="2026-05-22T05:34:53.367366" elapsed="0.004015"/>
-</branch>
-<status status="PASS" start="2026-05-22T05:34:53.367366" elapsed="0.004015"/>
-</if>
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2026-05-22T05:34:53.371381" level="INFO">Opening browser 'chrome' to base url 'http://demowebshop.tricentis.com/'.</msg>
+<msg time="2026-05-22T10:33:51.266005" level="INFO">Opening browser 'chrome' to base url 'http://demowebshop.tricentis.com/'.</msg>
 <arg>${URL}</arg>
 <arg>chrome</arg>
-<arg>options=${options}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-05-22T05:34:53.371381" elapsed="26.903655"/>
+<status status="PASS" start="2026-05-22T10:33:51.266005" elapsed="19.656079"/>
 </kw>
 <kw name="Set Selenium Timeout" owner="SeleniumLibrary">
 <arg>10s</arg>
 <doc>Sets the timeout that is used by various keywords.</doc>
-<status status="PASS" start="2026-05-22T05:35:20.276180" elapsed="0.009584"/>
+<status status="PASS" start="2026-05-22T10:34:10.922619" elapsed="0.002166"/>
 </kw>
-<status status="PASS" start="2026-05-22T05:34:53.351372" elapsed="26.935531"/>
+<status status="PASS" start="2026-05-22T10:33:51.264999" elapsed="19.659786"/>
 </kw>
 <kw name="Click Login Link" owner="Demokeywords">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-05-22T05:35:20.290252" level="INFO">Clicking element '//a[text()='Log in']'.</msg>
+<msg time="2026-05-22T10:34:10.927520" level="INFO">Clicking element '//a[text()='Log in']'.</msg>
 <arg>${LOGIN_LINK}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-05-22T05:35:20.287913" elapsed="0.595358"/>
+<status status="PASS" start="2026-05-22T10:34:10.926507" elapsed="0.485160"/>
 </kw>
-<status status="PASS" start="2026-05-22T05:35:20.286903" elapsed="0.596368"/>
+<status status="PASS" start="2026-05-22T10:34:10.925786" elapsed="0.485881"/>
 </kw>
 <kw name="Wait Until Login Page Visible" owner="Demokeywords">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>//strong[normalize-space()='Returning Customer']</arg>
 <arg>20s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-05-22T05:35:20.885908" elapsed="0.062987"/>
+<status status="PASS" start="2026-05-22T10:34:11.413676" elapsed="0.145855"/>
 </kw>
-<status status="PASS" start="2026-05-22T05:35:20.885204" elapsed="0.064615"/>
+<status status="PASS" start="2026-05-22T10:34:11.412696" elapsed="0.146835"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-05-22T10:34:11.664386" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-94.png"&gt;&lt;img src="selenium-screenshot-94.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-05-22T10:34:11.559531" elapsed="0.105852"/>
 </kw>
 <kw name="Enter Login Credentials" owner="Demokeywords">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-05-22T05:35:20.952414" level="INFO">Typing text 'testuser@test.com' into text field 'id=Email'.</msg>
+<msg time="2026-05-22T10:34:11.667987" level="INFO">Typing text 'robotframeworkuser@test.com' into text field 'id=Email'.</msg>
 <arg>${EMAIL}</arg>
 <arg>${email_1}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-05-22T05:35:20.951400" elapsed="0.250821"/>
+<status status="PASS" start="2026-05-22T10:34:11.667384" elapsed="0.178338"/>
 </kw>
 <kw name="Input Password" owner="SeleniumLibrary">
-<msg time="2026-05-22T05:35:21.204220" level="INFO">Typing password into text field 'id=Password'.</msg>
-<msg time="2026-05-22T05:35:21.370862" level="INFO">Temporally setting log level to: NONE</msg>
+<msg time="2026-05-22T10:34:11.846732" level="INFO">Typing password into text field 'id=Password'.</msg>
+<msg time="2026-05-22T10:34:11.916578" level="INFO">Temporally setting log level to: NONE</msg>
 <arg>${PASSWORD}</arg>
 <arg>${password_1}</arg>
 <doc>Types the given password into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-05-22T05:35:21.203218" elapsed="0.344175"/>
+<status status="PASS" start="2026-05-22T10:34:11.845722" elapsed="0.159778"/>
 </kw>
-<return>
-<value>${email}</value>
-<status status="PASS" start="2026-05-22T05:35:21.547393" elapsed="0.000998"/>
-</return>
-<arg>testuser@test.com</arg>
-<arg>wrongpass</arg>
-<status status="PASS" start="2026-05-22T05:35:20.950326" elapsed="0.599062"/>
+<arg>${useremail}</arg>
+<arg>${PASSWORD}</arg>
+<status status="PASS" start="2026-05-22T10:34:11.666389" elapsed="0.340121"/>
 </kw>
 <kw name="Click Login Button" owner="Demokeywords">
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2026-05-22T05:35:21.555394" level="INFO">Clicking button 'xpath=//input[@value='Log in']'.</msg>
+<msg time="2026-05-22T10:34:12.008674" level="INFO">Clicking button 'xpath=//input[@value='Log in']'.</msg>
 <arg>${LOGIN_BUTTON}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2026-05-22T05:35:21.555394" elapsed="0.639027"/>
+<status status="PASS" start="2026-05-22T10:34:12.007511" elapsed="0.991054"/>
 </kw>
-<status status="PASS" start="2026-05-22T05:35:21.551392" elapsed="0.643029"/>
+<status status="PASS" start="2026-05-22T10:34:12.006510" elapsed="0.992055"/>
 </kw>
+<kw name="Verify Login Successful" owner="Demokeywords">
 <kw name="Page Should Contain" owner="SeleniumLibrary">
-<msg time="2026-05-22T05:35:23.088085" level="INFO">Current page contains text 'Login was unsuccessful'.</msg>
-<arg>Login was unsuccessful</arg>
+<msg time="2026-05-22T10:34:13.260385" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-95.png"&gt;&lt;img src="selenium-screenshot-95.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-05-22T10:34:13.261395" level="FAIL">Page should have contained text 'Log out' but did not.</msg>
+<arg>Log out</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<status status="PASS" start="2026-05-22T05:35:22.198201" elapsed="0.891286"/>
+<status status="FAIL" start="2026-05-22T10:34:13.001435" elapsed="0.394976">Page should have contained text 'Log out' but did not.</status>
+</kw>
+<status status="FAIL" start="2026-05-22T10:34:12.999611" elapsed="0.396800">Page should have contained text 'Log out' but did not.</status>
 </kw>
 <kw name="Close Browser Session" owner="Demokeywords" type="TEARDOWN">
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2026-05-22T05:35:23.092086" elapsed="2.817872"/>
+<status status="PASS" start="2026-05-22T10:34:13.399986" elapsed="3.300065"/>
 </kw>
-<status status="PASS" start="2026-05-22T05:35:23.089487" elapsed="2.821469"/>
+<status status="PASS" start="2026-05-22T10:34:13.397965" elapsed="3.303079"/>
 </kw>
 <tag>TC</tag>
-<tag>TC_002</tag>
-<status status="PASS" start="2026-05-22T05:34:53.343031" elapsed="32.567925"/>
+<tag>TC_001</tag>
+<status status="FAIL" start="2026-05-22T10:33:51.249839" elapsed="25.451205">Page should have contained text 'Log out' but did not.</status>
 </test>
-<status status="PASS" start="2026-05-22T05:34:52.424174" elapsed="33.493348"/>
+<status status="FAIL" start="2026-05-22T10:33:46.831685" elapsed="29.879275"/>
 </suite>
-<status status="PASS" start="2026-05-22T05:34:52.414409" elapsed="33.509137"/>
+<status status="FAIL" start="2026-05-22T10:33:46.821397" elapsed="29.894800"/>
 </suite>
-<status status="PASS" start="2026-05-22T05:34:52.356755" elapsed="33.577494"/>
+<status status="FAIL" start="2026-05-22T10:33:46.586548" elapsed="30.138176"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">TC</stat>
-<stat pass="1" fail="0" skip="0">TC_002</stat>
+<stat pass="0" fail="1" skip="0">TC</stat>
+<stat pass="0" fail="1" skip="0">TC_001</stat>
 </tag>
 <suite>
-<stat name="Robot Testcase" id="s1" pass="1" fail="0" skip="0">Robot Testcase</stat>
-<stat name="TestSuite" id="s1-s1" pass="1" fail="0" skip="0">Robot Testcase.TestSuite</stat>
-<stat name="Login" id="s1-s1-s1" pass="1" fail="0" skip="0">Robot Testcase.TestSuite.Login</stat>
+<stat name="Robot Testcase" id="s1" pass="0" fail="1" skip="0">Robot Testcase</stat>
+<stat name="TestSuite" id="s1-s1" pass="0" fail="1" skip="0">Robot Testcase.TestSuite</stat>
+<stat name="Login" id="s1-s1-s1" pass="0" fail="1" skip="0">Robot Testcase.TestSuite.Login</stat>
 </suite>
 </statistics>
 <errors>

@@ -1,4 +1,5 @@
 *** Variables ***
 @{product_list}    Books    Computers    Electronics    Apparel & shoes
-${useremail}          robotframeworktestuser@test.com      
-${password}        Password123
+${useremail}          robotframeworkuser@test.com      
+# ${password_1}        User123
+${PASSWORD}        Default
