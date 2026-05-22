@@ -31,8 +31,10 @@ Click Login Link
 
 Enter Login Credentials
     [Arguments]    ${email_1}    ${password_1}
+    Set Log Level    NONE
     Input Text     ${EMAIL}      ${email_1}
     Wait Until Keyword Succeeds    3x    5    Input Text    ${PASSWORD}   ${password_1}
+    Set Log Level    INFO
     
 Click Login Button
     Wait Until Element Is Visible    ${LOGIN_BUTTON}   10s 
