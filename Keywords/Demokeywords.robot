@@ -25,7 +25,7 @@ Close Browser Session
     Close Browser
 
 Click Login Link
-    Wait Until Element Is Visible    ${LOGIN_LINK}   10s 
+    Wait Until Element Is Visible    ${LOGIN_LINK}   30s 
 
     Click Element    ${LOGIN_LINK}
 

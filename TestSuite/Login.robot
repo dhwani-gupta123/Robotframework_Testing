@@ -12,7 +12,7 @@ Valid Login Test
     [Tags]    TC_001    TC
     Click Login Link
     Wait Until Login Page Visible
-    Capture Page Screenshot    login.png
+    Capture Page Screenshot   
     Enter Login Credentials    ${useremail}    ${PASSWORD}
     Click Login Button
     Verify Login Successful
