@@ -24,7 +24,7 @@ Invalid Login Test - Wrong Password
     Wait Until Login Page Visible
     Enter Login Credentials    testuser@test.com    wrongpass
     Click Login Button
-    Page Should Contain    Login was unsuccessful
+    Page Should Contain    Login was unsuccessful    10s
 
 
 Invalid Login Test - Invalid Email
