@@ -33,6 +33,8 @@ Enter Login Credentials
     Input Password    ${PASSWORD}   ${password_1}
     
 Click Login Button
+    Wait Until Element Is Visible    ${LOGIN_BUTTON}   10s 
+
     Click Button    ${LOGIN_BUTTON}
 
 Verify Login Successful
