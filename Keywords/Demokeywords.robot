@@ -32,7 +32,7 @@ Click Login Link
 Enter Login Credentials
     [Arguments]    ${email_1}    ${password_1}
     Input Text     ${EMAIL}      ${email_1}
-    Input Password    ${PASSWORD}   ${password_1}
+    Wait Until Element Is Visible    Input Text    ${PASSWORD}   ${password_1}
     
 Click Login Button
     Wait Until Element Is Visible    ${LOGIN_BUTTON}   10s 

@@ -13,7 +13,7 @@ Valid Login Test
     Click Login Link
     Wait Until Login Page Visible
     Capture Page Screenshot   
-    Enter Login Credentials    ${useremail}    ${PASSWORD}
+    Enter Login Credentials    ${useremail}    ${password_1}
     Click Login Button
     Verify Login Successful
 
