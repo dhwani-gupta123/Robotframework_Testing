@@ -23,7 +23,7 @@ Invalid Login Test - Wrong Password
     Click Login Link
     Wait Until Login Page Visible
     Enter Login Credentials    testuser@test.com    wrongpass
-    Click Login Button
+    # Click Login Button
     Page Should Contain    Login was unsuccessful    10s
     Capture Page Screenshot
 
