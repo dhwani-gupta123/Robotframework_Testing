@@ -8,7 +8,7 @@ Resource   ../ObjectRepository/DemoObjects.robot
 Launch Browser
     ${options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys
     IF    ${HEADLESS}
-    # Evaluate    $options.add_argument("--headless=new")
+        Evaluate    $options.add_argument("--headless=new")
         Evaluate    $options.add_argument("--no-sandbox")
         Evaluate    $options.add_argument("--disable-dev-shm-usage")
         Evaluate    $options.add_argument("--window-size=1920,1080")
