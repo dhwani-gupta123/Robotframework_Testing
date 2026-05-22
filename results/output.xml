@@ -1,102 +1,149 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.2 (Python 3.12.10 on win32)" generated="2026-05-22T10:33:46.564487" rpa="false" schemaversion="5">
+<robot generator="Robot 7.4.2 (Python 3.12.10 on win32)" generated="2026-05-22T11:02:46.480297" rpa="false" schemaversion="5">
 <suite id="s1" name="Robot Testcase" source="C:\Users\dhwani.gupta\Music\Robot_Testcase">
 <suite id="s1-s1" name="TestSuite" source="C:\Users\dhwani.gupta\Music\Robot_Testcase\TestSuite">
 <suite id="s1-s1-s1" name="Login" source="C:\Users\dhwani.gupta\Music\Robot_Testcase\TestSuite\Login.robot">
 <test id="s1-s1-s1-t1" name="Valid Login Test" line="11">
 <kw name="Launch Browser" owner="Demokeywords" type="SETUP">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-05-22T11:02:50.796475" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001BED6A623F0&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-05-22T11:02:50.745976" elapsed="0.050499"/>
+</kw>
+<if>
+<branch type="IF" condition="${HEADLESS}">
+<kw name="Evaluate" owner="BuiltIn">
+<arg>$options.add_argument("--headless=new")</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2026-05-22T11:02:50.797981" elapsed="0.000000"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<arg>$options.add_argument("--no-sandbox")</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2026-05-22T11:02:50.797981" elapsed="0.000000"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<arg>$options.add_argument("--disable-dev-shm-usage")</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2026-05-22T11:02:50.798991" elapsed="0.000000"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<arg>$options.add_argument("--window-size=1920,1080")</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2026-05-22T11:02:50.798991" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-05-22T11:02:50.796475" elapsed="0.003129"/>
+</branch>
+<status status="PASS" start="2026-05-22T11:02:50.796475" elapsed="0.003129"/>
+</if>
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2026-05-22T10:33:51.266005" level="INFO">Opening browser 'chrome' to base url 'http://demowebshop.tricentis.com/'.</msg>
+<msg time="2026-05-22T11:02:50.799604" level="INFO">Opening browser 'chrome' to base url 'http://demowebshop.tricentis.com/'.</msg>
 <arg>${URL}</arg>
 <arg>chrome</arg>
+<arg>options=${options}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-05-22T10:33:51.266005" elapsed="19.656079"/>
+<status status="PASS" start="2026-05-22T11:02:50.799604" elapsed="15.915458"/>
 </kw>
 <kw name="Set Selenium Timeout" owner="SeleniumLibrary">
 <arg>10s</arg>
 <doc>Sets the timeout that is used by various keywords.</doc>
-<status status="PASS" start="2026-05-22T10:34:10.922619" elapsed="0.002166"/>
+<status status="PASS" start="2026-05-22T11:03:06.715062" elapsed="0.007662"/>
 </kw>
-<status status="PASS" start="2026-05-22T10:33:51.264999" elapsed="19.659786"/>
+<status status="PASS" start="2026-05-22T11:02:50.744976" elapsed="15.977748"/>
 </kw>
 <kw name="Click Login Link" owner="Demokeywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LOGIN_LINK}</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-05-22T11:03:06.724781" elapsed="0.230628"/>
+</kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-05-22T10:34:10.927520" level="INFO">Clicking element '//a[text()='Log in']'.</msg>
+<msg time="2026-05-22T11:03:06.956430" level="INFO">Clicking element '//a[text()='Log in']'.</msg>
 <arg>${LOGIN_LINK}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-05-22T10:34:10.926507" elapsed="0.485160"/>
+<status status="PASS" start="2026-05-22T11:03:06.955409" elapsed="0.499748"/>
 </kw>
-<status status="PASS" start="2026-05-22T10:34:10.925786" elapsed="0.485881"/>
+<status status="PASS" start="2026-05-22T11:03:06.723264" elapsed="0.732927"/>
 </kw>
 <kw name="Wait Until Login Page Visible" owner="Demokeywords">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>//strong[normalize-space()='Returning Customer']</arg>
 <arg>20s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-05-22T10:34:11.413676" elapsed="0.145855"/>
+<status status="PASS" start="2026-05-22T11:03:07.457157" elapsed="0.023132"/>
 </kw>
-<status status="PASS" start="2026-05-22T10:34:11.412696" elapsed="0.146835"/>
+<status status="PASS" start="2026-05-22T11:03:07.456191" elapsed="0.025110"/>
 </kw>
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2026-05-22T10:34:11.664386" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-94.png"&gt;&lt;img src="selenium-screenshot-94.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-05-22T11:03:07.607942" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-96.png"&gt;&lt;img src="selenium-screenshot-96.png" width="800px"&gt;&lt;/a&gt;</msg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2026-05-22T10:34:11.559531" elapsed="0.105852"/>
+<status status="PASS" start="2026-05-22T11:03:07.481301" elapsed="0.128152"/>
 </kw>
 <kw name="Enter Login Credentials" owner="Demokeywords">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-05-22T10:34:11.667987" level="INFO">Typing text 'robotframeworkuser@test.com' into text field 'id=Email'.</msg>
+<msg time="2026-05-22T11:03:07.612466" level="INFO">Typing text 'robotframeworkuser@test.com' into text field 'id=Email'.</msg>
 <arg>${EMAIL}</arg>
 <arg>${email_1}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-05-22T10:34:11.667384" elapsed="0.178338"/>
+<status status="PASS" start="2026-05-22T11:03:07.611467" elapsed="0.146145"/>
 </kw>
 <kw name="Input Password" owner="SeleniumLibrary">
-<msg time="2026-05-22T10:34:11.846732" level="INFO">Typing password into text field 'id=Password'.</msg>
-<msg time="2026-05-22T10:34:11.916578" level="INFO">Temporally setting log level to: NONE</msg>
+<msg time="2026-05-22T11:03:07.759030" level="INFO">Typing password into text field 'id=Password'.</msg>
+<msg time="2026-05-22T11:03:07.813069" level="INFO">Temporally setting log level to: NONE</msg>
 <arg>${PASSWORD}</arg>
 <arg>${password_1}</arg>
 <doc>Types the given password into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-05-22T10:34:11.845722" elapsed="0.159778"/>
+<status status="PASS" start="2026-05-22T11:03:07.757612" elapsed="0.135780"/>
 </kw>
 <arg>${useremail}</arg>
 <arg>${PASSWORD}</arg>
-<status status="PASS" start="2026-05-22T10:34:11.666389" elapsed="0.340121"/>
+<status status="PASS" start="2026-05-22T11:03:07.610469" elapsed="0.282923"/>
 </kw>
 <kw name="Click Login Button" owner="Demokeywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LOGIN_BUTTON}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-05-22T11:03:07.895406" elapsed="0.042931"/>
+</kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2026-05-22T10:34:12.008674" level="INFO">Clicking button 'xpath=//input[@value='Log in']'.</msg>
+<msg time="2026-05-22T11:03:07.940363" level="INFO">Clicking button 'xpath=//input[@value='Log in']'.</msg>
 <arg>${LOGIN_BUTTON}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2026-05-22T10:34:12.007511" elapsed="0.991054"/>
+<status status="PASS" start="2026-05-22T11:03:07.938337" elapsed="0.103616"/>
 </kw>
-<status status="PASS" start="2026-05-22T10:34:12.006510" elapsed="0.992055"/>
+<status status="PASS" start="2026-05-22T11:03:07.894399" elapsed="0.148868"/>
 </kw>
 <kw name="Verify Login Successful" owner="Demokeywords">
 <kw name="Page Should Contain" owner="SeleniumLibrary">
-<msg time="2026-05-22T10:34:13.260385" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-95.png"&gt;&lt;img src="selenium-screenshot-95.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2026-05-22T10:34:13.261395" level="FAIL">Page should have contained text 'Log out' but did not.</msg>
+<msg time="2026-05-22T11:03:08.715996" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-97.png"&gt;&lt;img src="selenium-screenshot-97.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-05-22T11:03:08.717209" level="FAIL">Page should have contained text 'Log out' but did not.</msg>
 <arg>Log out</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<status status="FAIL" start="2026-05-22T10:34:13.001435" elapsed="0.394976">Page should have contained text 'Log out' but did not.</status>
+<status status="FAIL" start="2026-05-22T11:03:08.044277" elapsed="0.783329">Page should have contained text 'Log out' but did not.</status>
 </kw>
-<status status="FAIL" start="2026-05-22T10:34:12.999611" elapsed="0.396800">Page should have contained text 'Log out' but did not.</status>
+<status status="FAIL" start="2026-05-22T11:03:08.043267" elapsed="0.784339">Page should have contained text 'Log out' but did not.</status>
 </kw>
 <kw name="Close Browser Session" owner="Demokeywords" type="TEARDOWN">
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2026-05-22T10:34:13.399986" elapsed="3.300065"/>
+<status status="PASS" start="2026-05-22T11:03:08.830707" elapsed="2.845104"/>
 </kw>
-<status status="PASS" start="2026-05-22T10:34:13.397965" elapsed="3.303079"/>
+<status status="PASS" start="2026-05-22T11:03:08.829614" elapsed="2.846197"/>
 </kw>
 <tag>TC</tag>
 <tag>TC_001</tag>
-<status status="FAIL" start="2026-05-22T10:33:51.249839" elapsed="25.451205">Page should have contained text 'Log out' but did not.</status>
+<status status="FAIL" start="2026-05-22T11:02:50.735247" elapsed="20.940564">Page should have contained text 'Log out' but did not.</status>
 </test>
-<status status="FAIL" start="2026-05-22T10:33:46.831685" elapsed="29.879275"/>
+<status status="FAIL" start="2026-05-22T11:02:46.719471" elapsed="24.965517"/>
 </suite>
-<status status="FAIL" start="2026-05-22T10:33:46.821397" elapsed="29.894800"/>
+<status status="FAIL" start="2026-05-22T11:02:46.712949" elapsed="24.976047"/>
 </suite>
-<status status="FAIL" start="2026-05-22T10:33:46.586548" elapsed="30.138176"/>
+<status status="FAIL" start="2026-05-22T11:02:46.501692" elapsed="25.192307"/>
 </suite>
 <statistics>
 <total>
