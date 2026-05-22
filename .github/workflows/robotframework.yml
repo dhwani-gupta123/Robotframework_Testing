@@ -44,6 +44,8 @@ jobs:
           else
             robot \
               --variable HEADLESS:True \
+              --variable URL:${{ vars.APP_URL }} \
+              --variable PASSWORD:${{ secrets.APPLICATION_PASSWORD }} \
               --include "${{ github.event.inputs.tags }}" \
               --outputdir reports \
               TestSuite/
