@@ -36,13 +36,13 @@ jobs:
 
           if [ -z "${{ github.event.inputs.tags }}" ]; then
             robot \
-              --variable URL:${{ vars.APP_URL }} \
+               --variable HEADLESS:True \
               --variable PASSWORD:${{ secrets.APPLICATION_PASSWORD }} \
               --outputdir reports \
               TestSuite/
           else
             robot \
-              --variable URL:${{ vars.APP_URL }} \
+              --variable HEADLESS:True \
               --variable PASSWORD:${{ secrets.APPLICATION_PASSWORD }} \
               --include "${{ github.event.inputs.tags }}" \
               --outputdir reports \
